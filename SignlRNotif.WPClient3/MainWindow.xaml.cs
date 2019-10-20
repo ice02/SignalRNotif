@@ -17,7 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MLNotification.WPClient3
+namespace SignalRNotif.WPClient3
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -45,7 +45,7 @@ namespace MLNotification.WPClient3
             {
                 if (connectHub != null) connectHub.Dispose();
 
-                connectHub = BuilderNotifMessageHubConnect.CreateMLMessageHub(txtUrl.Text);
+                connectHub = BuilderNotifMessageHubConnect.CreateNotifMessageHub(txtUrl.Text);
 
                 //connectHub.ProcessMessage += (sender2, e2) => lstMensajes.Dispatcher.Invoke(() =>
                 //{

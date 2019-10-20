@@ -18,24 +18,8 @@ namespace SignalRNotif.WPFClient.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
 
-            //var rd = new ResourceDictionary();
-            //rd.Source = new Uri("MLNotification.WPFClient:///MLDarkStyle.xaml");
-
             if (string.IsNullOrWhiteSpace(value?.ToString()))
             {
-                //BitmapImage logo = new BitmapImage();
-                //logo.BeginInit();
-                //string path = @"/MLNotification.WPFClient;component/Images/information.png";
-                //logo.UriSource = new Uri(path, UriKind.RelativeOrAbsolute);
-                //logo.EndInit();
-
-
-                ////result.BeginInit();
-                ////result.UriSource = new Uri(@"/MLNotification.WPFClient;component/Images/information.png", UriKind.Relative);
-                ////result.EndInit();
-
-                //return new ImageBrush(logo);
-
                 var imageBrush = (ImageBrush)Application.Current.Resources["SettingsLogoPrincipalBrush"];
 
                 return imageBrush;

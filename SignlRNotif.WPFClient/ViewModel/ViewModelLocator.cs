@@ -4,6 +4,7 @@ using SignalRNotif.ServiceClient;
 using SignalRNotif.WPFClient.Settings;
 using SignalRNotif.Models;
 using CommonServiceLocator;
+using System.Security.Principal;
 
 namespace SignalRNotif.WPFClient.ViewModel
 {
@@ -52,9 +53,11 @@ namespace SignalRNotif.WPFClient.ViewModel
 
                     //string serviceAddress = "htpp://localhost:5";
 
-                    var userInfo = new UserInfo { User = "Principal Client" };
+                    var usr = WindowsIdentity.GetCurrent();
 
-                    connectHub = BuilderNotifMessageHubConnect.CreateMLMessageHub(serviceAddress, userInfo);
+                    var userInfo = new UserInfo { User = usr.Name };
+
+                    connectHub = BuilderNotifMessageHubConnect.CreateNotifMessageHub(serviceAddress, userInfo);
                 }
                 catch (System.Exception ex)
                 {

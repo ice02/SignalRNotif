@@ -10,7 +10,7 @@ namespace SignalRNotif.ServiceClient
 {
     public class BuilderNotifMessageHubConnect
     {
-        public static NotifMessageHubConect CreateMLMessageHub(string address, IUserInfo userInfo = null, bool isDefaultConnect = true)
+        public static NotifMessageHubConect CreateNotifMessageHub(string address, IUserInfo userInfo = null, bool isDefaultConnect = true)
         {
             HubConnection conexionHub = new HubConnection(address, isDefaultConnect);
             IHubProxy proxyHub = conexionHub.CreateHubProxy("NotifMessageHub");

@@ -8,7 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using SignalRNotif.ServiceClient;
 
-namespace MLNotification.WPClient2
+namespace SignalRNotif.WPClient2
 {
 
     public partial class MainWindow : MetroWindow
@@ -40,7 +40,7 @@ namespace MLNotification.WPClient2
             {
                 if (connectHub != null) connectHub.Dispose();
 
-                connectHub = BuilderNotifMessageHubConnect.CreateMLMessageHub(txtUrl.Text);
+                connectHub = BuilderNotifMessageHubConnect.CreateNotifMessageHub(txtUrl.Text);
 
                 connectHub.ProcessMessage += (sender2, e2) => lstServerMessages.Dispatcher.Invoke(() =>
                 {

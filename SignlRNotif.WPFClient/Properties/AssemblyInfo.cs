@@ -30,7 +30,7 @@ using System.Windows;
 
 //[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
-[assembly: InternalsVisibleTo("MLNotification.WPFClient.Tests")]
+[assembly: InternalsVisibleTo("SignalRNotif.WPFClient.Tests")]
 
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //where theme specific resource dictionaries are located

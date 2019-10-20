@@ -9,15 +9,17 @@ namespace SignalRNotif.Service
     {
         async public override Task OnConnected()
         {
-            //Console.WriteLine("Nueva conexion con Id=" + Context.ConnectionId);
+            Console.WriteLine("New conection with Id=" + Context.ConnectionId);
 
-            //var message = new NotificationMessage
-            //{
-            //    Subject     = "New service connection",
-            //    Body        = $"There is a new connection from the UserId:{Context.ConnectionId}",
-            //    MessageDate = DateTime.Now,
-            //    MessageType = MessageType.Information
-            //};
+            var message = new NotificationMessage
+            {
+                Subject = "New service connection",
+                Body = $"There is a new connection from the UserId:{Context.ConnectionId}",
+                MessageDate = DateTime.Now,
+                MessageType = MessageType.Information
+            };
+
+            await base.OnConnected();
 
             //await Clients.Caller.ProcessMessage(message);
             //await Clients.Others.ProcessMessage(message);
@@ -37,12 +39,17 @@ namespace SignalRNotif.Service
 
             await Clients.Caller.ProcessMessage(message);
             await Clients.Others.ProcessMessage(message);
+
+            await base.OnDisconnected(stopCalled);
         }
 
         async public Task SendMessage(NotificationMessage message)
         {
             Console.WriteLine($"[{message.User}]: {message.Body}");
-            await Clients.All.ProcessMessage(message);
+
+            //GlobalHost.DependencyResolver.Resolve<ITransportHeartbeat>().GetConnections().FirstOrDefault(p=>p.)
+            await Clients.User(message.User).send(message);
+            //await Clients.All.ProcessMessage(message);
         }
 
 

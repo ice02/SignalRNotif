@@ -188,7 +188,7 @@
 
     <!-- BUTTONS -->
     <ControlTemplate x:Key="CloseButtonStyle" TargetType="{x:Type Button}">
-        <Border x:Name="bd"  Background="{StaticResource Close1Brush}" ToolTip="Close MLNotifications" />
+        <Border x:Name="bd"  Background="{StaticResource Close1Brush}" ToolTip="Close Notifications" />
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" TargetName="bd" Value="{StaticResource Close2Brush}"/>

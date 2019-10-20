@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace MLNotification.WPClient2
+namespace SignalRNotif.WPClient2
 {
     /// <summary>
     /// Interaction logic for Window2.xaml

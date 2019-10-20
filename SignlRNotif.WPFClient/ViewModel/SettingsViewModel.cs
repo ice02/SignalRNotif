@@ -83,7 +83,7 @@ namespace SignalRNotif.WPFClient.ViewModel
 
             if(notificationView != null)
             {
-                var connectHub = BuilderNotifMessageHubConnect.CreateMLMessageHub(serviceAddress);
+                var connectHub = BuilderNotifMessageHubConnect.CreateNotifMessageHub(serviceAddress);
                 notificationView.DataContext = new NotificationViewModel(connectHub) { IsConnected = true };
                 var notificationViewModel = (NotificationViewModel)notificationView.DataContext;
                 notificationViewModel.DeletedAllNotification();

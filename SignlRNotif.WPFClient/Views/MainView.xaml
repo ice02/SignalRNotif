@@ -83,7 +83,7 @@
     </Window.Triggers>
     <Grid>
 
-        <Image x:Name="image" Source="/MLNotification.WPFClient;component/Images/MLNotificationLogo.png"  />
+        <Image x:Name="image" Source="/SignalRNotif.WPFClient;component/Images/MLNotificationLogo.png"  />
 
         
 
@@ -109,7 +109,7 @@
                             <ColumnDefinition Width="124"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Image x:Name="image1" Source="/MLNotification.WPFClient;component/Images/MLNotificationLogo.png" Margin="6" RenderTransformOrigin="0.5,0.5" >
+                        <Image x:Name="image1" Source="/SignalRNotif.WPFClient;component/Images/MLNotificationLogo.png" Margin="6" RenderTransformOrigin="0.5,0.5" >
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -121,7 +121,7 @@
                         </Image>
 
                         <Grid Grid.Column="1" Margin="6">
-                            <TextBlock  FontFamily="Segoe UI Semilight" Foreground="#FFCBC9C9" Text="MLNotifications" HorizontalAlignment="Center" FontSize="24"  VerticalAlignment="Top"/>
+                            <TextBlock  FontFamily="Segoe UI Semilight" Foreground="#FFCBC9C9" Text="Notifications" HorizontalAlignment="Center" FontSize="24"  VerticalAlignment="Top"/>
                             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Run FontSize="12" Foreground="gray" >You have  </Run>
                         <Run Text="{Binding NotificationsCount}" Foreground="Aqua" FontSize="14" FontWeight="Bold"/>
@@ -136,7 +136,7 @@
                 <ContextMenu Background="#F22B2A2A" >
                     <MenuItem Header="Settings" Foreground="Gainsboro" Command="{Binding OpenSettingsViewCommand}">
                         <MenuItem.Icon>
-                            <Image Source="/MLNotification.WPFClient;component/Images/settings1.png" Width="10" Height="10" />
+                            <Image Source="/SignalRNotif.WPFClient;component/Images/settings1.png" Width="10" Height="10" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="Exit"     Foreground="Gainsboro" Click="MenuItem_Click"/>

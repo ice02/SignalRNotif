@@ -8,6 +8,6 @@ namespace SignalRNotif.WPFClient.Settings
 {
     public class SettingsGlobalData
     {
-        public static string PathFileSettingsName { get; private set; } = "MLNotificationSettings.txt";
+        public static string PathFileSettingsName { get; private set; } = "NotificationSettings.txt";
     }
 }

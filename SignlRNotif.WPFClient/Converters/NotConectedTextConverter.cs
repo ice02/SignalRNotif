@@ -19,7 +19,7 @@ namespace SignalRNotif.WPFClient.Converters
 
             if (boolValue)
             {
-                result = "MLNotifications";
+                result = "Notifications";
             }
             else
             {

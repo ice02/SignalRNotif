@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace MLNotification.WPClient2
+namespace SignalRNotif.WPClient2
 {
     /// <summary>
     /// Interaction logic for App.xaml
