@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49EC1E08-267E-4FDE-874F-50328A44E67C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SignalRNotif.MainUI</RootNamespace>
+    <AssemblyName>SignalRNotif.MainUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hardcodet.NotifyIcon.Wpf.1.0.8\lib\net45\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.4.1\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Converters\BallonStateBrushConverter.cs" />
+    <Compile Include="Converters\BitmapToBitmapImageConverter.cs" />
+    <Compile Include="Converters\MessageTypeImageConverter.cs" />
+    <Compile Include="Converters\NotConectedBrushConverter.cs" />
+    <Compile Include="Converters\NotConectedTextConverter.cs" />
+    <Compile Include="Converters\StateBrushConverter.cs" />
+    <Compile Include="Framework\RelayCommand.cs" />
+    <Compile Include="Framework\ViewModelBase.cs" />
+    <Compile Include="Settings\SettingsInfo.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\NotificationViewModel.cs" />
+    <Compile Include="ViewModel\SettingsViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NotificationBallon.xaml.cs">
+      <DependentUpon>NotificationBallon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NotificationItemView.xaml.cs">
+      <DependentUpon>NotificationItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NotificationView.xaml.cs">
+      <DependentUpon>NotificationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NotificationBallon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NotificationItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NotificationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\principal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\settingsImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MLNotification.Domain\SignalRNotif.Models.csproj">
+      <Project>{5c076819-f8cd-41d1-9ad8-e09852b844e8}</Project>
+      <Name>SignalRNotif.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MLNotification.ServiceConnection\SignalRNotif.ServiceClient.csproj">
+      <Project>{0cf7f418-4732-4be9-9fa6-746ca351a6e7}</Project>
+      <Name>SignalRNotif.ServiceClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\12-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btClose1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btClose2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btClose3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\clearall1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\clearall2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\clearall3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MLNotificationLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\notification.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\principal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\save2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\save3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\settings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\settings2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\settings3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\veryimportant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\warining.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
