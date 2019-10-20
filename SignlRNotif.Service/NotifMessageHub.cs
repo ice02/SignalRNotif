@@ -37,7 +37,7 @@ namespace SignalRNotif.Service
                 UriImage    = "http://www.tampabay.com/resources/images/dti/rendered/2015/04/wek_plug041615_15029753_8col.jpg"
             };
 
-            await Clients.Caller.ProcessMessage(message);
+            //await Clients.Caller.ProcessMessage(message);
             await Clients.Others.ProcessMessage(message);
 
             await base.OnDisconnected(stopCalled);
