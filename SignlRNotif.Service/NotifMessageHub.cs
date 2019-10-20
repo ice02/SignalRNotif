@@ -9,7 +9,7 @@ namespace SignalRNotif.Service
     {
         async public override Task OnConnected()
         {
-            Console.WriteLine("New conection with Id=" + Context.ConnectionId);
+            Console.WriteLine("New connection with Id=" + Context.ConnectionId);
 
             var message = new NotificationMessage
             {
@@ -26,7 +26,7 @@ namespace SignalRNotif.Service
         }
         async public override Task OnDisconnected(bool stopCalled)
         {
-            Console.WriteLine($"New conection Id={Context.ConnectionId}");
+            Console.WriteLine($"Disconnection Id={Context.ConnectionId}");
 
             var message = new NotificationMessage
             {
@@ -46,10 +46,9 @@ namespace SignalRNotif.Service
         async public Task SendMessage(NotificationMessage message)
         {
             Console.WriteLine($"[{message.User}]: {message.Body}");
-
-            //GlobalHost.DependencyResolver.Resolve<ITransportHeartbeat>().GetConnections().FirstOrDefault(p=>p.)
-            await Clients.User(message.User).send(message);
-            //await Clients.All.ProcessMessage(message);
+            
+            //await Clients.User(message.User).ProcessMessage(message);
+            await Clients.All.ProcessMessage(message);
         }
 
 
