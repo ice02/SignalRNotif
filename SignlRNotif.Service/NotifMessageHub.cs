@@ -46,9 +46,9 @@ namespace SignalRNotif.Service
         async public Task SendMessage(NotificationMessage message)
         {
             Console.WriteLine($"[{message.User}]: {message.Body}");
-            
-            //await Clients.User(message.User).ProcessMessage(message);
-            await Clients.All.ProcessMessage(message);
+
+            await Clients.User(message.User).ProcessMessage(message);
+            //await Clients.All.ProcessMessage(message);
         }
 
 
