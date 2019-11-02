@@ -3,9 +3,10 @@
     <ResourceDictionary>
       <ImageBrush x:Key="SettingsLogoPrincipalBrush" ImageSource="Images/MLNotificationLogo.png" />
       <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="MLDarkStyle.xaml">
+                <ResourceDictionary Source="MLDarkStyle.xaml"/>
+                <ResourceDictionary>
                     <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:SignalRNotif.WPFClient.ViewModel" />
-        </ResourceDictionary>
+                </ResourceDictionary>
         <ResourceDictionary Source="Simple Styles.xaml" />
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>

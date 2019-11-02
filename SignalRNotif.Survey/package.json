@@ -1,0 +1,10 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "react-email-editor": "^1.0.0",
+    "react-tabs": "^3.0.0",
+    "surveyjs": "^2.0.2"
+  }
+}

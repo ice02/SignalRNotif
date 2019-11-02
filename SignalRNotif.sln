@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRNotif.WPClient3", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRNotif.MVCClient", "SignlRNotif.MVCClient\SignalRNotif.MVCClient.csproj", "{EB73C111-35CF-40BF-880D-679E8D6F0FC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRNotif.ServiceCore", "SignalRNotif.ServiceCore\SignalRNotif.ServiceCore.csproj", "{B89B0232-1DE2-4BE1-B251-577503934989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRNotif.Survey", "SignalRNotif.Survey\SignalRNotif.Survey.csproj", "{25D04BBD-7D19-453A-9ADD-A7657C2B42E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{EB73C111-35CF-40BF-880D-679E8D6F0FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB73C111-35CF-40BF-880D-679E8D6F0FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB73C111-35CF-40BF-880D-679E8D6F0FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89B0232-1DE2-4BE1-B251-577503934989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89B0232-1DE2-4BE1-B251-577503934989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89B0232-1DE2-4BE1-B251-577503934989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89B0232-1DE2-4BE1-B251-577503934989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25D04BBD-7D19-453A-9ADD-A7657C2B42E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25D04BBD-7D19-453A-9ADD-A7657C2B42E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25D04BBD-7D19-453A-9ADD-A7657C2B42E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25D04BBD-7D19-453A-9ADD-A7657C2B42E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

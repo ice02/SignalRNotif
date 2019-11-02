@@ -1,17 +1,17 @@
-﻿using Microsoft.AspNet.SignalR;
+﻿using Microsoft.AspNetCore.SignalR;
 using SignalRNotif.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SignalRNotif.Service
+namespace SignalRNotif.ServiceCore
 {
     public class NotifMessageHub : Hub
     {
         List<UserConnection> uList = new List<UserConnection>();
 
-        public override Task OnConnected()
+        public override Task OnConnectedAsync()
         {
             Console.WriteLine("New connection with Id=" + Context.ConnectionId);
 
@@ -23,13 +23,14 @@ namespace SignalRNotif.Service
                 MessageType = MessageType.Information
             };
 
-            return base.OnConnected();
+            return base.OnConnectedAsync();
 
             //await Clients.Caller.ProcessMessage(message);
             //await Clients.Others.ProcessMessage(message);
         }
-        async public override Task OnDisconnected(bool stopCalled)
+        public override Task OnDisconnectedAsync(Exception exception)
         {
+            
             Console.WriteLine($"Disconnection Id={Context.ConnectionId}");
 
             var message = new NotificationMessage
@@ -42,9 +43,9 @@ namespace SignalRNotif.Service
             };
 
             //await Clients.Caller.ProcessMessage(message);
-            await Clients.Others.ProcessMessage(message);
+            Clients.Others.SendAsync("ProcessMessage", message);
 
-            await base.OnDisconnected(stopCalled);
+            return base.OnDisconnectedAsync(exception);
         }
 
         async public Task SendMessage(NotificationMessage message)
@@ -56,7 +57,7 @@ namespace SignalRNotif.Service
             var user = uList.Where(o => o.UserName == message.User);
             if (user.Any())
             {
-                await Clients.Client(user.First().ConnectionID).ProcessMessage(message);//.sendMessage(sendFromId, userId, sendFromName, userName, message);
+                await Clients.Client(user.First().ConnectionID).SendAsync("ProcessMessage",message);//.sendMessage(sendFromId, userId, sendFromName, userName, message);
             }
 
             //await Clients.All.ProcessMessage(message);
@@ -90,7 +91,7 @@ namespace SignalRNotif.Service
                 UriImage = "http://www.iconhot.com/icon/png/glossy/512/plug-5.png"
             };
 
-            await Clients.Client(Context.ConnectionId).ProcessMessage(message);
+            await Clients.Client(Context.ConnectionId).SendAsync("ProcessMessage", message);
         }
 
     }
