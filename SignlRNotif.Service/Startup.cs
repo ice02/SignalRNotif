@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin.Cors;
+﻿using Microsoft.AspNet.SignalR;
+using Microsoft.Owin.Cors;
 using Owin;
 
 namespace SignalRNotif.Service
@@ -8,7 +9,16 @@ namespace SignalRNotif.Service
         public static void Configuration(IAppBuilder app)
         {
             app.UseCors(CorsOptions.AllowAll);
-            app.MapSignalR();
+            app.Map("/signalr", map =>
+            {
+                var hubConfigration = new HubConfiguration
+                {
+                    EnableJSONP = true,
+                    EnableJavaScriptProxies = false,
+                    EnableDetailedErrors = true
+                };
+                map.RunSignalR(hubConfigration);
+            });
         }
     }
 }
