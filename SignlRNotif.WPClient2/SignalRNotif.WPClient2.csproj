@@ -121,9 +121,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SignlRNotif.Models\SignalRNotif.Models.csproj">
-      <Project>{5c076819-f8cd-41d1-9ad8-e09852b844e8}</Project>
-      <Name>SignalRNotif.Models</Name>
+    <ProjectReference Include="..\SignalRNotif.Models.Fmk\SignalRNotif.Models.Fmk.csproj">
+      <Project>{44A113B0-4703-4DE5-908B-1C771ADB4847}</Project>
+      <Name>SignalRNotif.Models.Fmk</Name>
     </ProjectReference>
     <ProjectReference Include="..\SignlRNotif.ServiceClient\SignalRNotif.ServiceClient.csproj">
       <Project>{0cf7f418-4732-4be9-9fa6-746ca351a6e7}</Project>

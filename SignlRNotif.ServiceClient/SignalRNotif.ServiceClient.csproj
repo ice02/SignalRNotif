@@ -61,9 +61,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SignlRNotif.Models\SignalRNotif.Models.csproj">
-      <Project>{5c076819-f8cd-41d1-9ad8-e09852b844e8}</Project>
-      <Name>SignalRNotif.Models</Name>
+    <ProjectReference Include="..\SignalRNotif.Models.Fmk\SignalRNotif.Models.Fmk.csproj">
+      <Project>{44a113b0-4703-4de5-908b-1c771adb4847}</Project>
+      <Name>SignalRNotif.Models.Fmk</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

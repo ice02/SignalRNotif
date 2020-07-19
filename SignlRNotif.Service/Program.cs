@@ -1,5 +1,6 @@
 ﻿using Microsoft.Owin.Hosting;
 using System;
+using System.Linq;
 
 namespace SignalRNotif.Service
 {
@@ -7,9 +8,16 @@ namespace SignalRNotif.Service
     {
         static void Main(string[] args)
         {
-            using (WebApp.Start<Startup>("http://localhost:11111"))
+            var port = "11111";
+
+            if (args.Count() > 0)
             {
-                Console.WriteLine("Hub on  http://localhost:11111");
+                port = args[0];
+            }
+
+            using (WebApp.Start<Startup>($"http://localhost:{port}"))
+            {
+                Console.WriteLine($"Hub on  http://localhost:{port}");
                 Console.ReadLine();
             }
         }

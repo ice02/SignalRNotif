@@ -73,7 +73,7 @@ namespace SignalRNotif.WPClient2
 
         protected override void OnClosing(CancelEventArgs e)
         {
-            connectHub.Dispose();
+            connectHub?.Dispose();
 
             base.OnClosing(e);
         }

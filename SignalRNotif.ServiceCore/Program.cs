@@ -19,6 +19,8 @@ namespace SignalRNotif.ServiceCore
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>().UseKestrel().UseUrls("http://localhost:11111");
+                .UseStartup<Startup>()
+                .UseKestrel()
+                .UseUrls("http://*:11111");
     }
 }

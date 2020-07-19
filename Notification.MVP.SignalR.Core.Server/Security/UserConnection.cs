@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SignalRNotif.ServiceCore
+namespace Notification.MVP.SignalR.Core.Server.Security
 {   
     public class UserConnection
     {

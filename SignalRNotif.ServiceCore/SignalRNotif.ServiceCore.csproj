@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SignlRNotif.Models\SignalRNotif.Models.csproj" />
+    <ProjectReference Include="..\SignalRNotif.Models\SignlRNotif.Models.csproj" />
   </ItemGroup>
 
 </Project>

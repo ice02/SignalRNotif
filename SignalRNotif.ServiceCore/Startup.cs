@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using SignalRNotif.ServiceCore.Security;
 
 namespace SignalRNotif.ServiceCore
 {
@@ -27,7 +29,18 @@ namespace SignalRNotif.ServiceCore
         {
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services
+                .AddAuthorization(options =>
+                {
+                    options.AddPolicy("DomainRestricted", policy =>
+                    {
+                        policy.Requirements.Add(new DomainRestrictedRequirement());
+                    });
+                });
+
             services.AddSignalR();
+
+            services.AddSingleton<IUserIdProvider, NameUserIdProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,9 +59,10 @@ namespace SignalRNotif.ServiceCore
             //app.UseHttpsRedirection();
             //app.UseMvc();
 
+            
+
             app.UseSignalR(builder =>
             {
-                builder.MapHub<Chat>("/chat");
                 builder.MapHub<NotifMessageHub>("/signalr");
             });
         }

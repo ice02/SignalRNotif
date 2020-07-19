@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using SignalRNotif.Models;
+using SignalRNotif.ServiceCore.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;

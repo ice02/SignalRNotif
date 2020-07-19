@@ -79,8 +79,6 @@ namespace SignalRNotif.WPFClient.ViewModel
 
         private void InitializeViewModel()
         {
-            
-
             connectHub.ProcessMessage += (sender, e) =>
             {
                 App.Current.Dispatcher.Invoke(() =>
